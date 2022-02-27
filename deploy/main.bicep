@@ -43,7 +43,7 @@ var environmentConfigurationMap = {
     }
     MsYamlIrinaStorageAccount: {
       sku: {
-        name: 'Standard_LRS'
+        name: 'Standard_GRS'
       }
     }
   }
