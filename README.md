@@ -5,17 +5,20 @@
 **CI/CD:**           Azure DevOps (YAML)
 
   
-###   **AZURE (ARM_Template plan):**
+###   **AZURE (~~ARM_~~ Bicep Template plan):**
 *  Resource: Static Web App 
-*  Resource group: 
-*  Name:
+*  Resource group: MSYAML
+*  Name: irinchi-website-[...some_unique_nrs_here...]
 *  Hosting plan: free 
-*  Azure functions region: westeurope 
+*  Azure functions region: germanywestcentral 
 *  Source: GitHub
 	
 ### **AZURE DEVOPS PIPELINE:**
-**VARIABLES** (keep this value secret):  
-* deployment_token
+**VARIABLES**:  
+* $(ServiceConnectionName)
+* $(ResourceGroupName)
+* $(EnvironmentType)
+* $(deployMsYamlIrinaStorageAccount) = true by 1st run deploys the storage account. Next, change to false to disable it for next runs.
 
 ## Configuration of Azure Static WebApp is in staticwebapp.config.json. 
 ### It defines:
