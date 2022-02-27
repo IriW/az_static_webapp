@@ -6,5 +6,14 @@ pool:
 jobs:
   - job: 
     steps:
-    - script: echo Hej!
-      displayName: 'Placeholder step'
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: $(ServiceConnectionName)
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          az deployment group create \
+            --name $(Build.BuildNumber) \
+            --resource-group $(ResourceGroupName) \
+            --template-file deploy/main.bicep \
+            --parameters environmentType=$(EnvironmentType) deployToyManualsStorageAccount=$(DeployToyManualsStorageAccount)
