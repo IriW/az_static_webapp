@@ -1,7 +1,17 @@
-trigger: none
+trigger: 
+  batch: true
+  paths:
+    include:
+      - deploy
+    
+    schedules:
+    - cron: "0 0 * * *"
+  branches:
+    include:
+      - '*'
 
 pool:
-    vmImage: ubuntu-latest
+  vmImage: ubuntu-latest
 
 jobs:
   - job: 
