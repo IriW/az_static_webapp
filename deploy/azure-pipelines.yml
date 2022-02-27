@@ -3,11 +3,10 @@ trigger:
   paths:
     include:
       - deploy
-    
-    schedules:
-    - cron: "0 0 * * *"
-  branches:
-    include:
+schedules:
+  - cron: "0 0 * * *"
+    branches:
+      include:
       - '*'
 
 pool:
