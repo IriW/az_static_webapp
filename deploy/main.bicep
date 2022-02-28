@@ -63,7 +63,7 @@ resource appServiceApp 'Microsoft.Web/sites@2020-06-01' = {
     serverFarmId: appServicePlan.id
     httpsOnly: true
     siteConfig: {
-     // alwaysOn: true
+     alwaysOn: false
       appSettings: [
         {
           name: 'MsYamlIrinaStorageAccountConnectionString'
